@@ -1,0 +1,28 @@
+﻿@model EmailModel
+
+<h2>Enviar E-mail</h2>
+
+@using (Html.BeginForm("SendEmail", "Email", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="ToEmail">E-mail Destinatário:</label>
+        @Html.TextBoxFor(model => model.ToEmail, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="Password">Senha:</label>
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="SmtpServer">SMTP Server:</label>
+        @Html.TextBoxFor(model => model.SmtpServer, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="SmtpPort">SMTP Port:</label>
+        @Html.TextBoxFor(model => model.SmtpPort, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+}
